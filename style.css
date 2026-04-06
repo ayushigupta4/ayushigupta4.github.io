@@ -78,6 +78,10 @@ nav ul {
     gap: 2px;
 }
 
+nav ul::-webkit-scrollbar {
+    display: none;
+}
+
 .tab-link {
     display: block;
     text-decoration: none;
@@ -395,4 +399,61 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background: var(--accent-hover);
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        flex-direction: column;
+    }
+
+    .about-stats {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .stat-card {
+        flex: 1;
+        min-width: 120px;
+    }
+
+    .contact-grid {
+        flex-direction: column;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-info {
+        width: 100%;
+    }
+
+    .projects-grid {
+        flex-direction: column;
+    }
+
+    .skills-grid {
+        flex-direction: column;
+    }
+
+    header {
+        padding: 40px 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 32px 20px;
+    }
+
+    .address-text {
+        width: 100%;
+    }
+
+    nav ul {
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
 }
