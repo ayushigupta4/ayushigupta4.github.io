@@ -29,12 +29,22 @@
             <span class="address-text">https://ayushigupta4.github.io/</span>
         </div>
 
-        <header>
-            <h1>Hi, I'm <span class="hero-name">Ayushi Gupta</span>.</h1>
-            <p>Full-Stack Developer & Software Engineer</p>
+        <header id="hero">
+            <div class="container">
+                <div class="hero-badge">👩‍💻 Open to Work</div>
+                <h1>Hi, I'm <span class="hero-name">Ayushi Gupta</span>.</h1>
+                <p class="hero-subtitle">
+                    <span id="typewriter"></span><span class="cursor">|</span>
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn-primary" onclick="handleHeroBtn(event, 'projects')">🚀 View Projects</a>
+                    <a href="#contact" class="btn-secondary" onclick="handleHeroBtn(event, 'contact')">📬 Get in Touch</a>
+                </div>  
+            </div>
+            
         </header>
 
-        <section id="about">
+        <section id="about" class="tab-section">
             <div class="container">
 
                 <h2>About Me</h2>
@@ -71,7 +81,7 @@
             </div>
         </section>
 
-        <section id="projects">
+        <section id="projects" class="tab-section">
             <div class="container">
 
                 <h2>Projects</h2>
@@ -154,7 +164,7 @@
             </div>
         </section>
 
-        <section id="skills">
+        <section id="skills" class="tab-section">
             <div class="container">
 
                 <h2>Skills</h2>
@@ -296,7 +306,7 @@
             </div>
         </section>
 
-        <section id="contact">
+        <section id="contact" class="tab-section">
             <div class="container">
 
                 <h2>Contact</h2>
