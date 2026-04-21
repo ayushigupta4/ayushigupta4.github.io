@@ -426,19 +426,6 @@ footer {
     margin-bottom: 6 px;
 }
 
-.skill-bar-bg {
-    background: #e8eaed;
-    border-radius: 4px;
-    height: 6px;
-}
-
-.skill-bar-fill {
-    background: var(--accent);
-    height: 6px;
-    border-radius: 4px;
-    transition: width 1s ease;
-}
-
 .contact-grid {
     display: flex;
     gap: 48px;
@@ -598,4 +585,29 @@ button[type="submit"]:hover {
 
 #hero.active-hero {
     display: block;
+}
+
+.stars {
+    display: flex;
+    gap: 2px;
+}
+
+.star {
+    font-size: 18px;
+}
+
+.star.full {
+    color: #fbbc04;
+}
+
+.star.half {
+    font-size: 18px;
+    background: linear-gradient(90deg, #fbbc04 50%, #e8eaed 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.star.empty {
+    color: #e8eaed;
 }

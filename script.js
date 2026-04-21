@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    const skillBars = document.querySelectorAll('.skill-bar-fill');
+    /* const skillBars = document.querySelectorAll('.skill-bar-fill');
 
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const skillsSection = document.querySelector('#skills');
-    observer.observe(skillsSection);
+    observer.observe(skillsSection); */
 
     //Contact Form
 
@@ -151,5 +151,26 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         switchTab(targetId);
     }
+
+    //Skill stars
+
+    const starContainers = document.querySelectorAll('.stars');
+
+    starContainers.forEach(function(container) {
+        const rating = parseFloat(container.getAttribute('data-stars'));
+        let starsHTML = '';
+
+        for(let i = 1; i <= 5; i++) {
+            if(i <= Math.floor(rating)) {
+                starsHTML += '<span class="star full">★</span>';
+            } else if (i === Math.ceil(rating) && rating % 1 !== 0) {
+                starsHTML += '<span class="star half">★</span>';
+            } else {
+                starsHTML += '<span class="star empty">★</span>';
+            }
+        }
+
+        container.innerHTML = starsHTML;
+    });
 
 });
