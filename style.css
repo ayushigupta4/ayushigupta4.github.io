@@ -822,3 +822,16 @@ button[type="submit"]:disabled {
 .project-card:hover .card-image img {
     transform: scale(1.05);
 }
+
+footer {
+    text-align: center;
+    padding: 1px;
+    background: var(--accent);
+    color: #ffffff;
+    font-size: 13px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 300;
+}
+footer p {
+    color: #ffffff;
+}
