@@ -157,6 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
         //Activate clicked tab
         const clickedTab = document.querySelector(`.tab-link[href="#${targetId}"]`);
         if(clickedTab) clickedTab.classList.add('active-tab');
+        localStorage.setItem('activeTab', targetId);
 
         const targetSection = document.getElementById(targetId);
         if(targetSection) targetSection.classList.add('active-section');
@@ -172,7 +173,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     //Show first tab by default
-    switchTab('about');
+    const savedTab = localStorage.getItem('activeTab');
+    switchTab(savedTab || 'about');
 
     function handleHeroBtn(event, targetId) {
         event.preventDefault();
