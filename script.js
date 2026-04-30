@@ -201,4 +201,36 @@ document.addEventListener('DOMContentLoaded', function() {
         container.innerHTML = starsHTML;
     });
 
+    //Dark Mode
+
+    const menuBtn = document.getElementById('menuBtn');
+    const dropdown = document.getElementById('dropdown');
+    const darkToggle = document.getElementById('darkToggle');
+    const dropdownLabel = document.querySelector('.dropdown-label');
+
+    menuBtn.addEventListener('click', function(event) {
+        event.stopPropagation();
+        dropdown.classList.toggle('open');
+    });
+
+    document.addEventListener('click', function() {
+        dropdown.classList.remove('open');
+    });
+
+    darkToggle.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+
+        document.querySelector('.dropdown-icon').textContent = isDark? '☀️': '🌙';
+        dropdownLabel.textContent = isDark? 'Light Mode' : 'Dark Mode';
+
+        localStorage.setItem('darkMode', isDark);
+    });
+
+    if(localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+        document.querySelector('.dropdown-icon').textContent = '☀️';
+        dropdownLabel.textContent = 'Light Mode';
+    }
+
 });

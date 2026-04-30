@@ -2,6 +2,14 @@
     box-sizing: border-box;
 }
 
+button {
+    font-family: inherit;
+    color: inherit;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
 :root {
     --bg: #f1f3f4;
     --surface: #ffffff;
@@ -12,6 +20,15 @@
     --text-secondary: #5f6368;
     --accent: #1a73e8;
     --accent-hover: #1557b0;
+}
+
+body.dark-mode {
+    --bg: #202124;
+    --surface: #292a2d;
+    --toolbar: #35363a;
+    --border: #5f6368;
+    --text: #e8eaed;
+    --text-secondary: #9aa0a6;
 }
 
 body {
@@ -136,14 +153,89 @@ nav a:hover {
 }
 
 .address-text {
+    flex: 1;
     background: var(--surface);
     border: 1px solid transparent;
     border-radius: 24px;
     padding: 6px 16px;
     font-size: 14px;
     color: var(--text);
-    width: 300px;
     font-family: 'Roboto Mono', monospace;
+}
+
+.menu-container {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.menu-btn {
+    background: transparent;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+}
+
+.menu-btn:hover {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: var(--surface);
+    border: none;
+    border-radius: 12px;
+    padding: 8px;
+    min-width: 200px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    z-index: 200;
+}
+
+.dropdown.open {
+    display: block;
+}
+
+.dropdown.item {
+    all: unset;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    transition: background 0.15s;
+    box-sizing: border-box;
+}
+
+.dropdown-item:hover {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.dropdown-icon {
+    font-size: 16px;
+}
+
+.dropdown-label {
+    flex: 1;
+    text-align: left;
+}
+
+body.dark-mode .dropdown-label {
+    color: var(--text);
 }
 
 header {
