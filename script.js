@@ -233,4 +233,23 @@ document.addEventListener('DOMContentLoaded', function() {
         dropdownLabel.textContent = 'Light Mode';
     }
 
+    //Back, forward and refresh
+
+    const backBtn = document.getElementById('backBtn');
+    const forwardBtn = document.getElementById('forwardBtn');
+    const refreshBtn = document.getElementById('refreshBtn');
+
+    backBtn.disabled = true;
+    forwardBtn.disabled = true;
+
+    refreshBtn.addEventListener('click', function() {
+        location.reload();
+    });
+
+    tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+            backBtn.disabled = false;
+        });
+    });
+
 });
